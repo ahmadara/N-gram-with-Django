@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ngram Analysis</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .form-control-custom {
+            max-width: 250px; /* تنظیم عرض دلخواه برای فیلدها */
+            width: 100%; /* عرض کامل نسبت به والد */
+        }
+        .form-group {
+            margin-bottom: 15px; /* فاصله پایین فرم */
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>Ngram Analysis</h2>
+    <form method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="group_id">Group ID:</label>
+            <input type="text" id="group_id" name="group_id" class="form-control form-control-custom" required>
+        </div>
+        <div class="form-group">
+            <label for="frequency_threshold">Frequency Threshold:</label>
+            <input type="number" id="frequency_threshold" name="frequency_threshold" class="form-control form-control-custom" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Generate Excel</button>
+    </form>
+</div>
+</body>
+</html>
